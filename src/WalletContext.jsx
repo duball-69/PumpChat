@@ -2,8 +2,7 @@ import React, { useMemo } from 'react';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import {
     PhantomWalletAdapter,
-    SolflareWalletAdapter,
-    TorusWalletAdapter,
+   
 } from '@solana/wallet-adapter-wallets';
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 

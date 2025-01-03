@@ -10,19 +10,15 @@ const WalletConnect = () => {
         const authenticateUser = async () => {
             if (connected && publicKey) {
                 try {
-                    // Check if the wallet already exists in the `users` table
+                    const walletAddress = publicKey.toString();
                     const { data, error } = await supabase
                         .from('users')
                         .select('*')
-                        .eq('wallet', publicKey.toString())
+                        .eq('wallet', walletAddress)
                         .single();
 
                     if (error && error.code === 'PGRST116') {
-                        // If the wallet does not exist, insert it
-                        const { error: insertError } = await supabase.from('users').insert({
-                            wallet: publicKey.toString(),
-                        });
-
+                        const { error: insertError } = await supabase.from('users').insert({ wallet: walletAddress });
                         if (insertError) {
                             console.error('Error inserting user:', insertError.message);
                         } else {
@@ -40,11 +36,7 @@ const WalletConnect = () => {
         authenticateUser();
     }, [connected, publicKey]);
 
-    return (
-        <div>
-            <WalletMultiButton />
-        </div>
-    );
+    return <WalletMultiButton />;
 };
 
 export default WalletConnect;
