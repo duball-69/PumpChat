@@ -28,8 +28,8 @@ function MessageInput({ addMessage }) {
             if (error) {
                 console.error("Error sending message:", error.message);
             } else {
-                addMessage(data[0]); // Add the message locally
-                setMessage(""); // Clear the input field
+                addMessage(data[0]);
+                setMessage("");
             }
         } catch (err) {
             console.error("Error during message sending:", err.message);

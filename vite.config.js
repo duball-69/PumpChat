@@ -1,6 +1,11 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+    resolve: {
+        alias: {
+            '@solana-mobile': false, // Temporarily disable @solana-mobile
+        },
+    },
     build: {
         rollupOptions: {
             output: {

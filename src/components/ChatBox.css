@@ -29,8 +29,8 @@
 }
 
 .chat-message {
-    margin-bottom: 15px;
-    padding: 10px;
+    margin-bottom: 12px;
+    padding: 4px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -39,6 +39,7 @@
     box-sizing: border-box;
     transition: background-color 0.3s;
     font-family: 'Arial', sans-serif;
+    font-size:14px;
 }
 
 .chat-sender {

@@ -17,7 +17,26 @@ const ChatRoom = () => {
         <ChatBox messages={messages} setMessages={setMessages} addMessage={addMessage} />
       </div>
       <footer className="chatroom-footer">
-        <MessageInput addMessage={addMessage} />
+      <MessageInput 
+    isWalletConnected={true} // Replace with actual wallet connection status
+    onSendMessage={async (message) => {
+        // Your Supabase message sending logic here
+        const { data, error } = await supabase
+            .from("messages")
+            .insert({
+                sender: publicKey.toString(),
+                content: message,
+            })
+            .select();
+            
+        if (error) throw error;
+        return data[0];
+    }}
+    addMessage={(newMessage) => {
+        // Your message list update logic here
+        setMessages(prev => [...prev, newMessage]);
+    }}
+/>
       </footer>
     </div>
   );

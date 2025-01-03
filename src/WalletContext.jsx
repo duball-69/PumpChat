@@ -1,17 +1,12 @@
 import React, { useMemo } from 'react';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
-import {
-    PhantomWalletAdapter,
-   
-} from '@solana/wallet-adapter-wallets';
+import { PhantomWalletAdapter, SolflareWalletAdapter } from '@solana/wallet-adapter-wallets';
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 
-// Default styles for wallet adapter
 import '@solana/wallet-adapter-react-ui/styles.css';
 
 export const WalletContextProvider = ({ children }) => {
-    // Configure wallets
-    const wallets = useMemo(() => [new PhantomWalletAdapter()], []);
+    const wallets = useMemo(() => [new PhantomWalletAdapter(), new SolflareWalletAdapter()], []);
 
     return (
         <ConnectionProvider endpoint="https://api.mainnet-beta.solana.com">
