@@ -12,10 +12,7 @@ import '@solana/wallet-adapter-react-ui/styles.css';
 
 export const WalletContextProvider = ({ children }) => {
     // Configure wallets
-    const wallets = useMemo(
-        () => [new PhantomWalletAdapter(), new SolflareWalletAdapter(), new TorusWalletAdapter()],
-        []
-    );
+    const wallets = useMemo(() => [new PhantomWalletAdapter()], []);
 
     return (
         <ConnectionProvider endpoint="https://api.mainnet-beta.solana.com">
