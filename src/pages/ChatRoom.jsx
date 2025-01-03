@@ -6,9 +6,7 @@ import "./ChatRoom.css";
 const ChatRoom = () => {
   return (
     <div className="chatroom-container">
-      <header className="chatroom-header">
-        <h2>PumpChat</h2>
-      </header>
+    
       <div className="chatroom-body">
         <ChatBox />
       </div>

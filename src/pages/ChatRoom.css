@@ -1,28 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 .chatroom-container {
     display: flex;
     flex-direction: column;
     height: 100vh;
     background-color: #121212;
-    color: #ffffff;
+    color: #e0e0e0;
     font-family: 'Arial', sans-serif;
-  }
-  
-  .chatroom-header {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.chatroom-header {
     background-color: #1f1f1f;
     padding: 1rem;
     text-align: center;
     border-bottom: 1px solid #333;
-  }
-  
-  .chatroom-body {
+    transition: background-color 0.3s;
+}
+
+.chatroom-header:hover {
+    background-color: #2a2a2a;
+}
+
+.chatroom-body {
     flex: 1;
     overflow-y: auto;
     padding: 1rem;
-  }
-  
-  .chatroom-footer {
+    background-color: #121212;
+}
+
+.chatroom-footer {
     background-color: #1f1f1f;
     padding: 0.5rem;
     border-top: 1px solid #333;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
   
