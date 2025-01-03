@@ -1,11 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import App from './App';
 import { WalletContextProvider } from './WalletContext';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
     <WalletContextProvider>
         <App />
-    </WalletContextProvider>,
-    document.getElementById('root')
+    </WalletContextProvider>
 );
