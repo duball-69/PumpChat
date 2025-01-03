@@ -1,0 +1,33 @@
+.header {
+    background-color: #1f1f1f; /* Dark background for the header */
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333; /* Dark border */
+}
+
+.header h1 {
+    color: #ff8c00; /* Warm orange for the title */
+    margin: 0; /* Remove default margin */
+}
+
+.nav-links {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Display links in a row */
+    gap: 1rem; /* Space between links */
+}
+
+.nav-links li {
+    margin: 0; /* Remove default margin */
+}
+
+.nav-links a {
+    color: #e0e0e0; /* Light grey for links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.nav-links a:hover {
+    color: #ff8c00; /* Change color on hover */
+}

@@ -50,7 +50,7 @@ function ChatBox() {
                         publicKey?.toString() === msg.sender ? 'my-message' : ''
                     }`}
                 >
-                    <strong className="chat-sender">{msg.sender}:</strong>
+                    <span className="chat-sender">{msg.sender}</span>
                     <span className="chat-content">{msg.content}</span>
                 </div>
             ))}

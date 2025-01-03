@@ -1,0 +1,14 @@
+.home-container {
+    text-align: center;
+    margin-top: 50px;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light grey text */
+}
+
+.home-container h1 {
+    color: #ff8c00; /* Warm orange for the heading */
+}
+
+.home-container p {
+    color: #e0e0e0; /* Light grey for paragraph text */
+}
