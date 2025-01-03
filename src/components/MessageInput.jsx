@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { supabase } from '../supabase';
-import { useWallet } from '@solana/wallet-adapter-react';
-import './MessageInput.css';
+import React, { useState } from "react";
+import { supabase } from "../supabase";
+import { useWallet } from "@solana/wallet-adapter-react";
+import "./MessageInput.css";
 
-function MessageInput() {
-    const [message, setMessage] = useState('');
+function MessageInput({ addMessage }) {
+    const [message, setMessage] = useState("");
     const { publicKey } = useWallet();
 
     const sendMessage = async () => {
         if (!publicKey) {
-            alert('Please connect your wallet to send messages.');
+            alert("Please connect your wallet to send messages.");
             return;
         }
 
@@ -18,20 +18,27 @@ function MessageInput() {
         }
 
         try {
-            const { error } = await supabase
-                .from('messages')
+            const { data, error } = await supabase
+                .from("messages")
                 .insert({
                     sender: publicKey.toString(),
                     content: message,
                 });
 
             if (error) {
-                console.error('Error sending message:', error.message);
+                console.error("Error sending message:", error.message);
             } else {
-                setMessage(''); // Clear the input field on success
+                addMessage(data[0]); // Add the message locally
+                setMessage(""); // Clear the input field
             }
         } catch (err) {
-            console.error('Error during message sending:', err.message);
+            console.error("Error during message sending:", err.message);
+        }
+    };
+
+    const handleKeyDown = (event) => {
+        if (event.key === "Enter") {
+            sendMessage();
         }
     };
 
@@ -43,6 +50,7 @@ function MessageInput() {
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Type a message..."
                 className="message-input"
+                onKeyDown={handleKeyDown} // Add keydown listener
             />
             <button onClick={sendMessage} className="send-button">
                 Send

@@ -8,7 +8,7 @@
 .chatroom-container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 86vh;
     background-color: #121212;
     color: #e0e0e0;
     font-family: 'Arial', sans-serif;
@@ -29,9 +29,13 @@
 
 .chatroom-body {
     flex: 1;
-    overflow-y: auto;
     padding: 1rem;
-    background-color: #121212;
+    background: linear-gradient(180deg, #121212 0%, #1a1a1a 100%);
+    overflow-y: hidden;
+}
+
+.chatroom-body::-webkit-scrollbar {
+    display: none;
 }
 
 .chatroom-footer {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import WalletConnect from './WalletConnect';
 import './Header.css'; // Optional: Create a CSS file for styling
 
 const Header = () => {
@@ -16,6 +17,7 @@ const Header = () => {
                     </li>
                 </ul>
             </nav>
+            <WalletConnect />
         </header>
     );
 };
