@@ -5,11 +5,13 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #333; /* Dark border */
+    font-family: 'Arial', sans-serif; /* Ensure header uses the same font */
 }
 
 .header h1 {
     color: #ff8c00; /* Warm orange for the title */
     margin: 0; /* Remove default margin */
+    font-family: 'Arial', sans-serif; /* Ensure title uses the same font */
 }
 
 .nav-links {
@@ -26,6 +28,7 @@
     color: #e0e0e0; /* Light grey for links */
     text-decoration: none; /* Remove underline */
     transition: color 0.3s; /* Smooth color transition */
+    font-family: 'Arial', sans-serif; /* Ensure links use the same font */
 }
 
 .nav-links a:hover {
